@@ -11,29 +11,29 @@ import Foundation
 protocol RoomListViewModelProtocol {
     func changeDate(_ date:Date)
     var rooms: Dynamic<[Room]> { get }
+    var selectedDate: Dynamic<Date> { get }
 }
 
 class RoomListViewModel: NSObject, RoomListViewModelProtocol {
-  
     
+    var selectedDate: Dynamic<Date>
     var rooms: Dynamic<[Room]>
     private var dataService:RoomBookingApi
-    private var date:Date
     
-    private var dateString:String {
-        return date.unixDate
+    private var selectedDateString:String {
+        return selectedDate.value.unixDate
     }
     
     init(date: Date = Date(), dataService:RoomBookingApi = RoomBookingService.sharedInstance) {
-        self.date = date
         self.dataService = dataService
+        self.selectedDate = Dynamic(date)
         self.rooms = Dynamic([])
         super.init()
         self.getRooms()
     }
     
     func getRooms() {
-        dataService.getRooms(GetRoomsRequest(date: dateString)) { (rooms:[Room]?, error:Error?) in
+        dataService.getRooms(GetRoomsRequest(date: selectedDateString)) { (rooms:[Room]?, error:Error?) in
             if let rooms = rooms {
                 self.rooms.value = rooms
             }
@@ -41,7 +41,7 @@ class RoomListViewModel: NSObject, RoomListViewModelProtocol {
     }
     
     func changeDate(_ date: Date) {
-        self.date = date
+        self.selectedDate.value = date
         getRooms()
     }
 }

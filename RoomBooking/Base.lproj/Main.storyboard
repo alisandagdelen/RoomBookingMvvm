@@ -10,10 +10,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Room ListVC-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="RoomBooking" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="RoomListVC" customModule="RoomBooking" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -33,10 +33,57 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" id="EFc-Sm-5nf"/>
+                    <connections>
+                        <outlet property="tblRooms" destination="nnU-Tg-OjT" id="ctq-rm-Nza"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="456.80000000000001" y="117.39130434782609"/>
+        </scene>
+        <!--Room DetailsVC-->
+        <scene sceneID="rIm-fK-xjR">
+            <objects>
+                <viewController restorationIdentifier="RoomDetailsVC" storyboardIdentifier="RoomDetailsVC" id="THy-kI-Po7" customClass="RoomDetailsVC" customModule="RoomBooking" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="rci-DS-cs4">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9aw-pM-Gig">
+                                <rect key="frame" x="30" y="50" width="315" height="587"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pVA-6R-VHc">
+                                        <rect key="frame" x="270" y="0.0" width="45" height="45"/>
+                                        <color key="backgroundColor" red="0.0" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="45" id="3DM-u4-9ph"/>
+                                            <constraint firstAttribute="width" constant="45" id="V0Y-XU-Rfr"/>
+                                        </constraints>
+                                        <connections>
+                                            <action selector="actBtnClose:" destination="THy-kI-Po7" eventType="touchUpInside" id="Gru-ck-3T0"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="pVA-6R-VHc" firstAttribute="top" secondItem="9aw-pM-Gig" secondAttribute="top" id="0Gq-Lg-jsc"/>
+                                    <constraint firstAttribute="trailing" secondItem="pVA-6R-VHc" secondAttribute="trailing" id="ZrN-hN-mat"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="TDV-Fm-aWg" firstAttribute="trailing" secondItem="9aw-pM-Gig" secondAttribute="trailing" constant="30" id="3eJ-Ek-QzJ"/>
+                            <constraint firstItem="TDV-Fm-aWg" firstAttribute="bottom" secondItem="9aw-pM-Gig" secondAttribute="bottom" constant="30" id="CNb-If-eG2"/>
+                            <constraint firstItem="9aw-pM-Gig" firstAttribute="leading" secondItem="TDV-Fm-aWg" secondAttribute="leading" constant="30" id="piR-rq-sQN"/>
+                            <constraint firstItem="9aw-pM-Gig" firstAttribute="top" secondItem="TDV-Fm-aWg" secondAttribute="top" constant="30" id="xQ2-Q9-b1u"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="TDV-Fm-aWg"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cWP-mo-Uoz" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1208.8" y="115.59220389805098"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="6YO-oe-9n3">

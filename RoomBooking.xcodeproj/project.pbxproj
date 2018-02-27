@@ -7,12 +7,28 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1240795039162373402AF1AC /* Pods_RoomBookingTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A3AD02DCBD461A1668239D8F /* Pods_RoomBookingTests.framework */; };
 		3BA076652045A44100EE43B6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BA076642045A44100EE43B6 /* AppDelegate.swift */; };
 		3BA076672045A44100EE43B6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BA076662045A44100EE43B6 /* ViewController.swift */; };
 		3BA0766A2045A44100EE43B6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3BA076682045A44100EE43B6 /* Main.storyboard */; };
 		3BA0766C2045A44100EE43B6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3BA0766B2045A44100EE43B6 /* Assets.xcassets */; };
 		3BA0766F2045A44100EE43B6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3BA0766D2045A44100EE43B6 /* LaunchScreen.storyboard */; };
 		3BA0767A2045A44100EE43B6 /* RoomBookingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BA076792045A44100EE43B6 /* RoomBookingTests.swift */; };
+		3BA0768D2045AAA700EE43B6 /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BA0768C2045AAA700EE43B6 /* DataService.swift */; };
+		3BA076902045AB3800EE43B6 /* ApiConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BA0768F2045AB3800EE43B6 /* ApiConstants.swift */; };
+		3BA076922045AC5500EE43B6 /* BaseRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BA076912045AC5500EE43B6 /* BaseRequest.swift */; };
+		3BA076942045AD9200EE43B6 /* RoomBookingService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BA076932045AD9200EE43B6 /* RoomBookingService.swift */; };
+		3BA076962045ADDE00EE43B6 /* GetRoomsRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BA076952045ADDE00EE43B6 /* GetRoomsRequest.swift */; };
+		3BA076982045AF7700EE43B6 /* Room.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BA076972045AF7700EE43B6 /* Room.swift */; };
+		3BA0769A2045AFFC00EE43B6 /* BaseObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BA076992045AFFC00EE43B6 /* BaseObject.swift */; };
+		3BA0769E2045D16600EE43B6 /* TCellRoom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BA0769D2045D16600EE43B6 /* TCellRoom.swift */; };
+		3BA076A02045D17500EE43B6 /* TCellRoom.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3BA0769F2045D17500EE43B6 /* TCellRoom.xib */; };
+		3BA076A22045D47400EE43B6 /* TableViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BA076A12045D47400EE43B6 /* TableViewDataSource.swift */; };
+		3BA076A42045D4E600EE43B6 /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BA076A32045D4E600EE43B6 /* UIViewExtension.swift */; };
+		3BA076A62045D53700EE43B6 /* RoomListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BA076A52045D53700EE43B6 /* RoomListViewModel.swift */; };
+		3BA076A82045D6FA00EE43B6 /* Dynamic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BA076A72045D6FA00EE43B6 /* Dynamic.swift */; };
+		3BA076AA2045DA8400EE43B6 /* DateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BA076A92045DA8400EE43B6 /* DateExtension.swift */; };
+		E5CCE0D57DC674A4204F4848 /* Pods_RoomBooking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C9F3A494DC282B56040E5C0B /* Pods_RoomBooking.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +52,26 @@
 		3BA076752045A44100EE43B6 /* RoomBookingTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RoomBookingTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3BA076792045A44100EE43B6 /* RoomBookingTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomBookingTests.swift; sourceTree = "<group>"; };
 		3BA0767B2045A44100EE43B6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3BA0768C2045AAA700EE43B6 /* DataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataService.swift; sourceTree = "<group>"; };
+		3BA0768F2045AB3800EE43B6 /* ApiConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiConstants.swift; sourceTree = "<group>"; };
+		3BA076912045AC5500EE43B6 /* BaseRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseRequest.swift; sourceTree = "<group>"; };
+		3BA076932045AD9200EE43B6 /* RoomBookingService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomBookingService.swift; sourceTree = "<group>"; };
+		3BA076952045ADDE00EE43B6 /* GetRoomsRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetRoomsRequest.swift; sourceTree = "<group>"; };
+		3BA076972045AF7700EE43B6 /* Room.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Room.swift; sourceTree = "<group>"; };
+		3BA076992045AFFC00EE43B6 /* BaseObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseObject.swift; sourceTree = "<group>"; };
+		3BA0769D2045D16600EE43B6 /* TCellRoom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TCellRoom.swift; sourceTree = "<group>"; };
+		3BA0769F2045D17500EE43B6 /* TCellRoom.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TCellRoom.xib; sourceTree = "<group>"; };
+		3BA076A12045D47400EE43B6 /* TableViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewDataSource.swift; sourceTree = "<group>"; };
+		3BA076A32045D4E600EE43B6 /* UIViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
+		3BA076A52045D53700EE43B6 /* RoomListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomListViewModel.swift; sourceTree = "<group>"; };
+		3BA076A72045D6FA00EE43B6 /* Dynamic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dynamic.swift; sourceTree = "<group>"; };
+		3BA076A92045DA8400EE43B6 /* DateExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateExtension.swift; sourceTree = "<group>"; };
+		A389CC31B163588749555330 /* Pods-RoomBooking.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RoomBooking.release.xcconfig"; path = "Pods/Target Support Files/Pods-RoomBooking/Pods-RoomBooking.release.xcconfig"; sourceTree = "<group>"; };
+		A3AD02DCBD461A1668239D8F /* Pods_RoomBookingTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RoomBookingTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		AE3F134543EFA590BCB65A55 /* Pods-RoomBookingTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RoomBookingTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-RoomBookingTests/Pods-RoomBookingTests.release.xcconfig"; sourceTree = "<group>"; };
+		C9F3A494DC282B56040E5C0B /* Pods_RoomBooking.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RoomBooking.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		DC456DA1C4E5611E7A950DA1 /* Pods-RoomBookingTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RoomBookingTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RoomBookingTests/Pods-RoomBookingTests.debug.xcconfig"; sourceTree = "<group>"; };
+		FDB06E2C776055BE461A6BAF /* Pods-RoomBooking.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RoomBooking.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RoomBooking/Pods-RoomBooking.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -43,6 +79,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E5CCE0D57DC674A4204F4848 /* Pods_RoomBooking.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -50,18 +87,30 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1240795039162373402AF1AC /* Pods_RoomBookingTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		103E93DB68B15CED988716B2 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C9F3A494DC282B56040E5C0B /* Pods_RoomBooking.framework */,
+				A3AD02DCBD461A1668239D8F /* Pods_RoomBookingTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		3BA076582045A44100EE43B6 = {
 			isa = PBXGroup;
 			children = (
 				3BA076632045A44100EE43B6 /* RoomBooking */,
 				3BA076782045A44100EE43B6 /* RoomBookingTests */,
 				3BA076622045A44100EE43B6 /* Products */,
+				C35353BC08559B538F649F48 /* Pods */,
+				103E93DB68B15CED988716B2 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -77,12 +126,13 @@
 		3BA076632045A44100EE43B6 /* RoomBooking */ = {
 			isa = PBXGroup;
 			children = (
-				3BA076642045A44100EE43B6 /* AppDelegate.swift */,
-				3BA076662045A44100EE43B6 /* ViewController.swift */,
+				3BA0768B2045A51600EE43B6 /* Controllers */,
+				3BA0768A2045A51100EE43B6 /* Views */,
+				3BA076892045A50900EE43B6 /* ViewModels */,
+				3BA076872045A4EF00EE43B6 /* Utility */,
+				3BA076862045A4E800EE43B6 /* Models */,
+				3BA076842045A47700EE43B6 /* Supporting Files */,
 				3BA076682045A44100EE43B6 /* Main.storyboard */,
-				3BA0766B2045A44100EE43B6 /* Assets.xcassets */,
-				3BA0766D2045A44100EE43B6 /* LaunchScreen.storyboard */,
-				3BA076702045A44100EE43B6 /* Info.plist */,
 			);
 			path = RoomBooking;
 			sourceTree = "<group>";
@@ -96,6 +146,102 @@
 			path = RoomBookingTests;
 			sourceTree = "<group>";
 		};
+		3BA076842045A47700EE43B6 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				3BA076642045A44100EE43B6 /* AppDelegate.swift */,
+				3BA0766B2045A44100EE43B6 /* Assets.xcassets */,
+				3BA0766D2045A44100EE43B6 /* LaunchScreen.storyboard */,
+				3BA076702045A44100EE43B6 /* Info.plist */,
+			);
+			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		3BA076852045A4DF00EE43B6 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				3BA0768C2045AAA700EE43B6 /* DataService.swift */,
+				3BA076932045AD9200EE43B6 /* RoomBookingService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		3BA076862045A4E800EE43B6 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				3BA076912045AC5500EE43B6 /* BaseRequest.swift */,
+				3BA076952045ADDE00EE43B6 /* GetRoomsRequest.swift */,
+				3BA076972045AF7700EE43B6 /* Room.swift */,
+				3BA076992045AFFC00EE43B6 /* BaseObject.swift */,
+				3BA076A72045D6FA00EE43B6 /* Dynamic.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		3BA076872045A4EF00EE43B6 /* Utility */ = {
+			isa = PBXGroup;
+			children = (
+				3BA076852045A4DF00EE43B6 /* Services */,
+				3BA0768E2045AB2400EE43B6 /* Helpers */,
+				3BA076882045A4F600EE43B6 /* Extensions */,
+			);
+			path = Utility;
+			sourceTree = "<group>";
+		};
+		3BA076882045A4F600EE43B6 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				3BA076A32045D4E600EE43B6 /* UIViewExtension.swift */,
+				3BA076A92045DA8400EE43B6 /* DateExtension.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		3BA076892045A50900EE43B6 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				3BA076A52045D53700EE43B6 /* RoomListViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		3BA0768A2045A51100EE43B6 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				3BA0769D2045D16600EE43B6 /* TCellRoom.swift */,
+				3BA0769F2045D17500EE43B6 /* TCellRoom.xib */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		3BA0768B2045A51600EE43B6 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				3BA076662045A44100EE43B6 /* ViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		3BA0768E2045AB2400EE43B6 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				3BA0768F2045AB3800EE43B6 /* ApiConstants.swift */,
+				3BA076A12045D47400EE43B6 /* TableViewDataSource.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		C35353BC08559B538F649F48 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				FDB06E2C776055BE461A6BAF /* Pods-RoomBooking.debug.xcconfig */,
+				A389CC31B163588749555330 /* Pods-RoomBooking.release.xcconfig */,
+				DC456DA1C4E5611E7A950DA1 /* Pods-RoomBookingTests.debug.xcconfig */,
+				AE3F134543EFA590BCB65A55 /* Pods-RoomBookingTests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -103,9 +249,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 3BA0767E2045A44100EE43B6 /* Build configuration list for PBXNativeTarget "RoomBooking" */;
 			buildPhases = (
+				D24855469AFB1A9A6D32A6B1 /* [CP] Check Pods Manifest.lock */,
 				3BA0765D2045A44100EE43B6 /* Sources */,
 				3BA0765E2045A44100EE43B6 /* Frameworks */,
 				3BA0765F2045A44100EE43B6 /* Resources */,
+				631B02E947AB7D851BD17CE4 /* [CP] Embed Pods Frameworks */,
+				06F89C6B7B7B884AF8A128E9 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -120,9 +269,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 3BA076812045A44100EE43B6 /* Build configuration list for PBXNativeTarget "RoomBookingTests" */;
 			buildPhases = (
+				57F64AB620E3658151B8EF20 /* [CP] Check Pods Manifest.lock */,
 				3BA076712045A44100EE43B6 /* Sources */,
 				3BA076722045A44100EE43B6 /* Frameworks */,
 				3BA076732045A44100EE43B6 /* Resources */,
+				D2390E30CB127CB32C2815FC /* [CP] Embed Pods Frameworks */,
+				6872735FDFA247E25DD38FD9 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -182,6 +334,7 @@
 				3BA0766F2045A44100EE43B6 /* LaunchScreen.storyboard in Resources */,
 				3BA0766C2045A44100EE43B6 /* Assets.xcassets in Resources */,
 				3BA0766A2045A44100EE43B6 /* Main.storyboard in Resources */,
+				3BA076A02045D17500EE43B6 /* TCellRoom.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -194,13 +347,132 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		06F89C6B7B7B884AF8A128E9 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-RoomBooking/Pods-RoomBooking-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		57F64AB620E3658151B8EF20 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-RoomBookingTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		631B02E947AB7D851BD17CE4 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-RoomBooking/Pods-RoomBooking-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/AlamofireObjectMapper/AlamofireObjectMapper.framework",
+				"${BUILT_PRODUCTS_DIR}/ObjectMapper/ObjectMapper.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AlamofireObjectMapper.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ObjectMapper.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-RoomBooking/Pods-RoomBooking-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6872735FDFA247E25DD38FD9 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-RoomBookingTests/Pods-RoomBookingTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D2390E30CB127CB32C2815FC /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-RoomBookingTests/Pods-RoomBookingTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D24855469AFB1A9A6D32A6B1 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-RoomBooking-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		3BA0765D2045A44100EE43B6 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3BA0769A2045AFFC00EE43B6 /* BaseObject.swift in Sources */,
+				3BA076AA2045DA8400EE43B6 /* DateExtension.swift in Sources */,
+				3BA0769E2045D16600EE43B6 /* TCellRoom.swift in Sources */,
+				3BA076962045ADDE00EE43B6 /* GetRoomsRequest.swift in Sources */,
+				3BA076A82045D6FA00EE43B6 /* Dynamic.swift in Sources */,
+				3BA076A62045D53700EE43B6 /* RoomListViewModel.swift in Sources */,
+				3BA076902045AB3800EE43B6 /* ApiConstants.swift in Sources */,
+				3BA076982045AF7700EE43B6 /* Room.swift in Sources */,
+				3BA0768D2045AAA700EE43B6 /* DataService.swift in Sources */,
+				3BA076A42045D4E600EE43B6 /* UIViewExtension.swift in Sources */,
+				3BA076942045AD9200EE43B6 /* RoomBookingService.swift in Sources */,
 				3BA076672045A44100EE43B6 /* ViewController.swift in Sources */,
 				3BA076652045A44100EE43B6 /* AppDelegate.swift in Sources */,
+				3BA076A22045D47400EE43B6 /* TableViewDataSource.swift in Sources */,
+				3BA076922045AC5500EE43B6 /* BaseRequest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -351,11 +623,12 @@
 		};
 		3BA0767F2045A44100EE43B6 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = FDB06E2C776055BE461A6BAF /* Pods-RoomBooking.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 4BE9CR5D8N;
-				INFOPLIST_FILE = RoomBooking/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/RoomBooking/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.alisandagdelen.RoomBooking;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -366,11 +639,12 @@
 		};
 		3BA076802045A44100EE43B6 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A389CC31B163588749555330 /* Pods-RoomBooking.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 4BE9CR5D8N;
-				INFOPLIST_FILE = RoomBooking/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/RoomBooking/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.alisandagdelen.RoomBooking;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -381,6 +655,7 @@
 		};
 		3BA076822045A44100EE43B6 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = DC456DA1C4E5611E7A950DA1 /* Pods-RoomBookingTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -398,6 +673,7 @@
 		};
 		3BA076832045A44100EE43B6 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = AE3F134543EFA590BCB65A55 /* Pods-RoomBookingTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";

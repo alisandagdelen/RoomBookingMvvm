@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		1240795039162373402AF1AC /* Pods_RoomBookingTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A3AD02DCBD461A1668239D8F /* Pods_RoomBookingTests.framework */; };
 		3BA076652045A44100EE43B6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BA076642045A44100EE43B6 /* AppDelegate.swift */; };
-		3BA076672045A44100EE43B6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BA076662045A44100EE43B6 /* ViewController.swift */; };
+		3BA076672045A44100EE43B6 /* RoomListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BA076662045A44100EE43B6 /* RoomListVC.swift */; };
 		3BA0766A2045A44100EE43B6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3BA076682045A44100EE43B6 /* Main.storyboard */; };
 		3BA0766C2045A44100EE43B6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3BA0766B2045A44100EE43B6 /* Assets.xcassets */; };
 		3BA0766F2045A44100EE43B6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3BA0766D2045A44100EE43B6 /* LaunchScreen.storyboard */; };
@@ -28,6 +28,7 @@
 		3BA076A62045D53700EE43B6 /* RoomListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BA076A52045D53700EE43B6 /* RoomListViewModel.swift */; };
 		3BA076A82045D6FA00EE43B6 /* Dynamic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BA076A72045D6FA00EE43B6 /* Dynamic.swift */; };
 		3BA076AA2045DA8400EE43B6 /* DateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BA076A92045DA8400EE43B6 /* DateExtension.swift */; };
+		3BA076B02045FE2500EE43B6 /* RoomDetailsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BA076AF2045FE2500EE43B6 /* RoomDetailsVC.swift */; };
 		E5CCE0D57DC674A4204F4848 /* Pods_RoomBooking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C9F3A494DC282B56040E5C0B /* Pods_RoomBooking.framework */; };
 /* End PBXBuildFile section */
 
@@ -44,7 +45,7 @@
 /* Begin PBXFileReference section */
 		3BA076612045A44100EE43B6 /* RoomBooking.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RoomBooking.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3BA076642045A44100EE43B6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		3BA076662045A44100EE43B6 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		3BA076662045A44100EE43B6 /* RoomListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomListVC.swift; sourceTree = "<group>"; };
 		3BA076692045A44100EE43B6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		3BA0766B2045A44100EE43B6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3BA0766E2045A44100EE43B6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -66,6 +67,7 @@
 		3BA076A52045D53700EE43B6 /* RoomListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomListViewModel.swift; sourceTree = "<group>"; };
 		3BA076A72045D6FA00EE43B6 /* Dynamic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dynamic.swift; sourceTree = "<group>"; };
 		3BA076A92045DA8400EE43B6 /* DateExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateExtension.swift; sourceTree = "<group>"; };
+		3BA076AF2045FE2500EE43B6 /* RoomDetailsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomDetailsVC.swift; sourceTree = "<group>"; };
 		A389CC31B163588749555330 /* Pods-RoomBooking.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RoomBooking.release.xcconfig"; path = "Pods/Target Support Files/Pods-RoomBooking/Pods-RoomBooking.release.xcconfig"; sourceTree = "<group>"; };
 		A3AD02DCBD461A1668239D8F /* Pods_RoomBookingTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RoomBookingTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AE3F134543EFA590BCB65A55 /* Pods-RoomBookingTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RoomBookingTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-RoomBookingTests/Pods-RoomBookingTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -217,7 +219,8 @@
 		3BA0768B2045A51600EE43B6 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				3BA076662045A44100EE43B6 /* ViewController.swift */,
+				3BA076662045A44100EE43B6 /* RoomListVC.swift */,
+				3BA076AF2045FE2500EE43B6 /* RoomDetailsVC.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -469,10 +472,11 @@
 				3BA0768D2045AAA700EE43B6 /* DataService.swift in Sources */,
 				3BA076A42045D4E600EE43B6 /* UIViewExtension.swift in Sources */,
 				3BA076942045AD9200EE43B6 /* RoomBookingService.swift in Sources */,
-				3BA076672045A44100EE43B6 /* ViewController.swift in Sources */,
+				3BA076672045A44100EE43B6 /* RoomListVC.swift in Sources */,
 				3BA076652045A44100EE43B6 /* AppDelegate.swift in Sources */,
 				3BA076A22045D47400EE43B6 /* TableViewDataSource.swift in Sources */,
 				3BA076922045AC5500EE43B6 /* BaseRequest.swift in Sources */,
+				3BA076B02045FE2500EE43B6 /* RoomDetailsVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

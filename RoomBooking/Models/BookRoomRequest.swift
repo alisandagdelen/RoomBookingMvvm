@@ -18,6 +18,11 @@ struct BookRoomRequest: BaseRequest {
         return API.SendPassURL
     }()
     
+    init(booking:Booking, attendees:[Attendee]) {
+        self.booking = booking
+        self.attendees = attendees
+    }
+    
     init?(map: Map) {
     }
     

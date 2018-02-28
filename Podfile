@@ -11,6 +11,7 @@ target 'RoomBooking' do
     pod 'ObjectMapper'
     pod 'AlamofireObjectMapper'
     pod 'SDWebImage'
+    pod	‘PhoneNumberKit’
 
   target 'RoomBookingTests' do
     inherit! :search_paths

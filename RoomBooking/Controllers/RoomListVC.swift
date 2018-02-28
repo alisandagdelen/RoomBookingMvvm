@@ -71,14 +71,19 @@ class RoomListVC: UIViewController {
     func showRoomDetailPopup(room: Room) {
         let roomDetailVC = self.storyboard!.instantiateViewController(withIdentifier: String(describing: RoomDetailsVC.self)) as! RoomDetailsVC
         roomDetailVC.roomDetailsViewModel = RoomDetailsViewModel(room: room)
+        roomDetailVC.delegate = self
         self.addChildViewController(roomDetailVC)
         roomDetailVC.view.frame = self.view.frame
         self.view.addSubview(roomDetailVC.view)
         roomDetailVC.didMove(toParentViewController: self)
     }
     
-    func presentBookRoomVC() {
+    func presentBookRoomVC(_ room:Room) {
+        guard let roomListViewModel = roomListViewModel else { return }
         
+        let bookRoomVC = self.storyboard!.instantiateViewController(withIdentifier: String(describing: BookRoomVC.self)) as! BookRoomVC
+        bookRoomVC.bookRoomViewModel = BookRoomViewModel(room: room, date: roomListViewModel.selectedDate.value)
+        self.navigationController?.pushViewController(bookRoomVC, animated: true)
     }
     
     @objc func dateChanged(_ sender:UIDatePicker) {
@@ -122,7 +127,7 @@ extension RoomListVC: UITableViewDelegate, RoomDetailsVCDelegate {
     }
     
     func bookRoom(_ room: Room) {
-        
+        presentBookRoomVC(room)
     }
 }
 

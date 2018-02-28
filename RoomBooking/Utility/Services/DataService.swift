@@ -13,6 +13,7 @@ import ObjectMapper
 
 typealias GenericObjectBlock<T> = (_ object:T?, _ error: Error?)-> Void
 typealias GenericArrayBlock<T> = (_ object:[T]?, _ error: Error?)-> Void
+typealias SuccessBlock = (Bool)-> Void
 
 class DataService{
     

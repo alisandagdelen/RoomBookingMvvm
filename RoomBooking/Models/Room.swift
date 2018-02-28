@@ -23,13 +23,13 @@ struct Room: BaseObject {
     }
     
     mutating func mapping(map: Map) {
-        name <- map["name"]
-        location <- map["location"]
-        equipments <- map["equipment"]
-        size <- map["size"]
-        capacity <- map["capacity"]
-        availableHours <- map["avail"]
-        imageUrls <- map["images"]
+        name            <- map["name"]
+        location        <- map["location"]
+        equipments      <- map["equipment"]
+        size            <- map["size"]
+        capacity        <- map["capacity"]
+        availableHours  <- map["avail"]
+        imageUrls       <- map["images"]
     }
     
 }

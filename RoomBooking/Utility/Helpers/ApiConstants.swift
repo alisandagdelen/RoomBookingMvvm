@@ -11,4 +11,5 @@ import Foundation
 enum API {
     static let BaseURL = "https://challenges.1aim.com/roombooking_app/"
     static let GetRoomsURL = "getrooms"
+    static let SendPassURL = "sendpass"
 }

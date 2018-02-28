@@ -10,6 +10,7 @@ import Foundation
 
 protocol RoomBookingApi {
     func getRooms(_ request:GetRoomsRequest, _ result:@escaping GenericArrayBlock<Room>)
+    func postBooking(_ request:BookRoomRequest, _ result:@escaping GenericObjectBlock<BookRoomResponse>)
 }
 
 class RoomBookingService: RoomBookingApi {
@@ -22,7 +23,13 @@ class RoomBookingService: RoomBookingApi {
     
     func getRooms(_ request: GetRoomsRequest, _ result: @escaping ([Room]?, Error?) -> Void) {
         DataService.sharedInstance.postObjectForObjects(request) { ( rooms:[Room]?, error:Error?) in
-            result(rooms,error)
+            result(rooms, error)
+        }
+    }
+    
+    func postBooking(_ request: BookRoomRequest, _ result: @escaping (BookRoomResponse?, Error?) -> Void) {
+        DataService.sharedInstance.postObjectForObject(request)  { (response:BookRoomResponse?, error:Error?) in
+            result(response,error)
         }
     }
 }

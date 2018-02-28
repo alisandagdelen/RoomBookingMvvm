@@ -22,19 +22,22 @@ class RoomDetailsVC: UIViewController {
     @IBOutlet weak var lblCapacity: UILabel!
     @IBOutlet weak var lblEquipments: UILabel!
     weak var delegate:RoomDetailsVCDelegate?
-
+    
     private var dataSource: CollectionViewDataSource<CCellRoomPhotos, String>!
     var roomDetailsViewModel: RoomDetailsViewModelProtocol?
     
+    enum CloseType {
+        case quit, book
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         showAnimate()
         collectionPhotos.delegate = self
         collectionPhotos.backgroundColor = self.view.backgroundColor
         collectionPhotos.register(UINib(nibName: CCellRoomPhotos.nibName, bundle: nil), forCellWithReuseIdentifier: CCellRoomPhotos.nibName)
         fillUI()
-        
-        // Do any additional setup after loading the view.
     }
     
     func fillUI() {
@@ -60,7 +63,11 @@ class RoomDetailsVC: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     @IBAction func actBtnClose(_ sender: UIButton) {
-        removeAnimate()
+        removeAnimate(closeType: .quit)
+    }
+    
+    @IBAction func actBookRoom(_ sender: UIButton) {
+        removeAnimate(closeType: .book)
     }
     
     func showAnimate() {
@@ -73,7 +80,10 @@ class RoomDetailsVC: UIViewController {
         });
     }
     
-    func removeAnimate() {
+    func removeAnimate(closeType: CloseType) {
+        
+        guard let roomDetailsViewModel = roomDetailsViewModel else { return }
+        
         UIView.animate(withDuration: 0.25, animations: {
             self.view.transform = CGAffineTransform(scaleX: 1.3, y: 1.3)
             self.view.alpha = 0.0;
@@ -81,6 +91,9 @@ class RoomDetailsVC: UIViewController {
             if (finished)
             {
                 self.view.removeFromSuperview()
+                if closeType == .book {
+                    self.delegate?.bookRoom(roomDetailsViewModel.room.value)
+                }
             }
         });
     }

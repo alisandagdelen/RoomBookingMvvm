@@ -21,7 +21,8 @@ class RoomDetailsVC: UIViewController {
     @IBOutlet weak var lblSize: UILabel!
     @IBOutlet weak var lblCapacity: UILabel!
     @IBOutlet weak var lblEquipments: UILabel!
-    
+    weak var delegate:RoomDetailsVCDelegate?
+
     private var dataSource: CollectionViewDataSource<CCellRoomPhotos, String>!
     var roomDetailsViewModel: RoomDetailsViewModelProtocol?
     

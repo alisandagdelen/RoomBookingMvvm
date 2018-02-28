@@ -11,7 +11,7 @@ import UIKit
 class RoomListVC: UIViewController {
     
     @IBOutlet weak var tblRooms: UITableView!
-    
+
     private let rowHeight:CGFloat = 120
     private var dataSource: TableViewDataSource<TCellRoom, Room>!
     
@@ -38,7 +38,6 @@ class RoomListVC: UIViewController {
                 cell.lblSize.text = room.size
                 cell.lblCapacity.text = "\(room.capacity)"
                 cell.lblLocation.text = room.location
-                cell.lblEquipment.text = room.equipments.joined(separator: " ,")
             }
             self.tblRooms.dataSource = self.dataSource
             self.tblRooms.reloadData()
@@ -56,8 +55,10 @@ class RoomListVC: UIViewController {
     }
     
     func setupNavigationItems() {
-        self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: ">", style: UIBarButtonItemStyle.plain, target: self, action: #selector(actNextDay(_:)))
-        self.navigationItem.leftBarButtonItem = UIBarButtonItem(title: "<", style: UIBarButtonItemStyle.plain, target: self, action: #selector(actPreviousDay(_:)))
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(image: #imageLiteral(resourceName: "arrowNext"), style: UIBarButtonItemStyle.plain, target: self, action: #selector(actNextDay(_:)))
+        self.navigationItem.leftBarButtonItem = UIBarButtonItem(image: #imageLiteral(resourceName: "arrowBack"), style: UIBarButtonItemStyle.plain, target: self, action: #selector(actPreviousDay(_:)))
+        self.navigationItem.rightBarButtonItem?.tintColor = UIColor.black
+        self.navigationItem.leftBarButtonItem?.tintColor = UIColor.black
         
         navigationTitleButton =  UIButton(type: .custom)
         navigationTitleButton.frame = CGRect(x: 0, y: 0, width: 300, height: 40)
@@ -67,12 +68,21 @@ class RoomListVC: UIViewController {
         self.navigationItem.titleView = navigationTitleButton
     }
     
-    func showRoomDetailPopup() {
+    func showRoomDetailPopup(room: Room) {
         let roomDetailVC = self.storyboard!.instantiateViewController(withIdentifier: String(describing: RoomDetailsVC.self)) as! RoomDetailsVC
+        roomDetailVC.roomDetailsViewModel = RoomDetailsViewModel(room: room)
         self.addChildViewController(roomDetailVC)
         roomDetailVC.view.frame = self.view.frame
         self.view.addSubview(roomDetailVC.view)
         roomDetailVC.didMove(toParentViewController: self)
+    }
+    
+    func presentBookRoomVC() {
+        
+    }
+    
+    @objc func dateChanged(_ sender:UIDatePicker) {
+        
     }
     
     @objc func actPreviousDay(_ sender : UIButton) {
@@ -88,22 +98,32 @@ class RoomListVC: UIViewController {
     }
     
     @objc func actTitleButton(_ sender: UIButton) {
-        print("test")
+        // todo
+//        let picker: UIDatePicker = UIDatePicker()
+//        picker.datePickerMode = .date
+//        picker.backgroundColor = UIColor.gray
+//        picker.addTarget(self, action: #selector(dateChanged(_:)), for: .valueChanged)
+//        picker.frame = CGRect(x: 0, y: (self.navigationController?.navigationBar.frame.size.height)!, width: self.view.frame.size.width, height: 300)
+//        self.view.addSubview(picker)
+        
     }
 }
 
-extension RoomListVC: UITableViewDelegate {
-    
-    
+extension RoomListVC: UITableViewDelegate, RoomDetailsVCDelegate {
+
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return rowHeight
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tblRooms.deselectRow(at: indexPath, animated: false)
-        showRoomDetailPopup()
+        guard let selectedRoom = roomListViewModel?.rooms.value[indexPath.row] else { return }
+        showRoomDetailPopup(room: selectedRoom)
     }
     
+    func bookRoom(_ room: Room) {
+        
+    }
 }
 
 

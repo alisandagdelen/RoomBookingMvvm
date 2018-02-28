@@ -11,7 +11,6 @@ import UIKit
 class TCellRoom: UITableViewCell {
 
     @IBOutlet weak var lblName: UILabel!
-    @IBOutlet weak var lblEquipment: UILabel!
     @IBOutlet weak var lblCapacity: UILabel!
     @IBOutlet weak var lblSize: UILabel!
     @IBOutlet weak var lblLocation: UILabel!

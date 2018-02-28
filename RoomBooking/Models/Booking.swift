@@ -18,6 +18,15 @@ struct Booking: BaseObject {
     var description:String = ""
     var roomName:String = ""
     
+    init(date:String, timeStart:String, timeEnd:String, title:String, description:String, roomName:String) {
+        self.date = date
+        self.timeStart = timeStart
+        self.timeEnd = timeEnd
+        self.title = title
+        self.description = description
+        self.roomName = roomName
+    }
+    
     init?(map: Map) {
     }
     

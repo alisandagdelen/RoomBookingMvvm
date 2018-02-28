@@ -13,7 +13,13 @@ struct Attendee: BaseObject {
     
     var name:String = ""
     var email:String = ""
-    var number:String = ""
+    var phoneNumber:String = ""
+    
+    init(name:String, email:String, phoneNumber:String) {
+        self.name = name
+        self.email = email
+        self.phoneNumber = phoneNumber
+    }
     
     init?(map: Map) {
     }
@@ -21,6 +27,6 @@ struct Attendee: BaseObject {
     mutating func mapping(map: Map) {
         name    <- map["name"]
         email   <- map["email"]
-        number  <- map["number"]
+        phoneNumber  <- map["number"]
     }
 }

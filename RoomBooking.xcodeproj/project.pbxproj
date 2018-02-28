@@ -29,6 +29,12 @@
 		3BA076A82045D6FA00EE43B6 /* Dynamic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BA076A72045D6FA00EE43B6 /* Dynamic.swift */; };
 		3BA076AA2045DA8400EE43B6 /* DateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BA076A92045DA8400EE43B6 /* DateExtension.swift */; };
 		3BA076B02045FE2500EE43B6 /* RoomDetailsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BA076AF2045FE2500EE43B6 /* RoomDetailsVC.swift */; };
+		3BA076B22047084F00EE43B6 /* BookRoomVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BA076B12047084F00EE43B6 /* BookRoomVC.swift */; };
+		3BF6B804204718E400C4D4E2 /* BookRoomViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BF6B803204718E400C4D4E2 /* BookRoomViewModel.swift */; };
+		3BF6B80620471D3F00C4D4E2 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BF6B80520471D3F00C4D4E2 /* StringExtension.swift */; };
+		3BF6B8082047326300C4D4E2 /* BookRoomResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BF6B8072047326300C4D4E2 /* BookRoomResponse.swift */; };
+		3BF6B80B2047392A00C4D4E2 /* TCellAttendee.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BF6B80A2047392A00C4D4E2 /* TCellAttendee.swift */; };
+		3BF6B80D2047395600C4D4E2 /* TCellAttendee.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3BF6B80C2047395600C4D4E2 /* TCellAttendee.xib */; };
 		B4CC9D9A20468DD700CFAF3C /* RoomDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4CC9D9920468DD700CFAF3C /* RoomDetailsViewModel.swift */; };
 		B4F16C4B2046CC1C00F48330 /* CollectionViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4F16C4A2046CC1C00F48330 /* CollectionViewDataSource.swift */; };
 		B4F16C4D2046D07900F48330 /* CCellRoomPhotos.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4F16C4C2046D07900F48330 /* CCellRoomPhotos.swift */; };
@@ -75,6 +81,12 @@
 		3BA076A72045D6FA00EE43B6 /* Dynamic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dynamic.swift; sourceTree = "<group>"; };
 		3BA076A92045DA8400EE43B6 /* DateExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateExtension.swift; sourceTree = "<group>"; };
 		3BA076AF2045FE2500EE43B6 /* RoomDetailsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomDetailsVC.swift; sourceTree = "<group>"; };
+		3BA076B12047084F00EE43B6 /* BookRoomVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookRoomVC.swift; sourceTree = "<group>"; };
+		3BF6B803204718E400C4D4E2 /* BookRoomViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookRoomViewModel.swift; sourceTree = "<group>"; };
+		3BF6B80520471D3F00C4D4E2 /* StringExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
+		3BF6B8072047326300C4D4E2 /* BookRoomResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookRoomResponse.swift; sourceTree = "<group>"; };
+		3BF6B80A2047392A00C4D4E2 /* TCellAttendee.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TCellAttendee.swift; sourceTree = "<group>"; };
+		3BF6B80C2047395600C4D4E2 /* TCellAttendee.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TCellAttendee.xib; sourceTree = "<group>"; };
 		A389CC31B163588749555330 /* Pods-RoomBooking.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RoomBooking.release.xcconfig"; path = "Pods/Target Support Files/Pods-RoomBooking/Pods-RoomBooking.release.xcconfig"; sourceTree = "<group>"; };
 		A3AD02DCBD461A1668239D8F /* Pods_RoomBookingTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RoomBookingTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AE3F134543EFA590BCB65A55 /* Pods-RoomBookingTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RoomBookingTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-RoomBookingTests/Pods-RoomBookingTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -193,6 +205,7 @@
 				B4F16C522047002000F48330 /* Booking.swift */,
 				B4F16C542047002800F48330 /* Attendee.swift */,
 				B4F16C562047021000F48330 /* BookRoomRequest.swift */,
+				3BF6B8072047326300C4D4E2 /* BookRoomResponse.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -212,6 +225,7 @@
 			children = (
 				3BA076A32045D4E600EE43B6 /* UIViewExtension.swift */,
 				3BA076A92045DA8400EE43B6 /* DateExtension.swift */,
+				3BF6B80520471D3F00C4D4E2 /* StringExtension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -221,6 +235,7 @@
 			children = (
 				3BA076A52045D53700EE43B6 /* RoomListViewModel.swift */,
 				B4CC9D9920468DD700CFAF3C /* RoomDetailsViewModel.swift */,
+				3BF6B803204718E400C4D4E2 /* BookRoomViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -228,6 +243,7 @@
 		3BA0768A2045A51100EE43B6 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				3BF6B8092047391100C4D4E2 /* TCellAttendee */,
 				B4F16C512046FEFC00F48330 /* CCellRoomPhotos */,
 				B4F16C502046FEF400F48330 /* TCellRoom */,
 			);
@@ -239,6 +255,7 @@
 			children = (
 				3BA076662045A44100EE43B6 /* RoomListVC.swift */,
 				3BA076AF2045FE2500EE43B6 /* RoomDetailsVC.swift */,
+				3BA076B12047084F00EE43B6 /* BookRoomVC.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -251,6 +268,15 @@
 				B4F16C4A2046CC1C00F48330 /* CollectionViewDataSource.swift */,
 			);
 			path = Helpers;
+			sourceTree = "<group>";
+		};
+		3BF6B8092047391100C4D4E2 /* TCellAttendee */ = {
+			isa = PBXGroup;
+			children = (
+				3BF6B80A2047392A00C4D4E2 /* TCellAttendee.swift */,
+				3BF6B80C2047395600C4D4E2 /* TCellAttendee.xib */,
+			);
+			path = TCellAttendee;
 			sourceTree = "<group>";
 		};
 		B4F16C502046FEF400F48330 /* TCellRoom */ = {
@@ -373,6 +399,7 @@
 			files = (
 				B4F16C4F2046D09500F48330 /* CCellRoomPhotos.xib in Resources */,
 				3BA0766F2045A44100EE43B6 /* LaunchScreen.storyboard in Resources */,
+				3BF6B80D2047395600C4D4E2 /* TCellAttendee.xib in Resources */,
 				3BA0766C2045A44100EE43B6 /* Assets.xcassets in Resources */,
 				3BA0766A2045A44100EE43B6 /* Main.storyboard in Resources */,
 				3BA076A02045D17500EE43B6 /* TCellRoom.xib in Resources */,
@@ -432,6 +459,7 @@
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/AlamofireObjectMapper/AlamofireObjectMapper.framework",
 				"${BUILT_PRODUCTS_DIR}/ObjectMapper/ObjectMapper.framework",
+				"${BUILT_PRODUCTS_DIR}/PhoneNumberKit/PhoneNumberKit.framework",
 				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
@@ -439,6 +467,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AlamofireObjectMapper.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ObjectMapper.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PhoneNumberKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -508,18 +537,23 @@
 				3BA076962045ADDE00EE43B6 /* GetRoomsRequest.swift in Sources */,
 				B4F16C572047021000F48330 /* BookRoomRequest.swift in Sources */,
 				3BA076A82045D6FA00EE43B6 /* Dynamic.swift in Sources */,
+				3BF6B80620471D3F00C4D4E2 /* StringExtension.swift in Sources */,
 				3BA076A62045D53700EE43B6 /* RoomListViewModel.swift in Sources */,
+				3BA076B22047084F00EE43B6 /* BookRoomVC.swift in Sources */,
 				B4F16C4D2046D07900F48330 /* CCellRoomPhotos.swift in Sources */,
 				3BA076902045AB3800EE43B6 /* ApiConstants.swift in Sources */,
 				3BA076982045AF7700EE43B6 /* Room.swift in Sources */,
 				B4F16C532047002000F48330 /* Booking.swift in Sources */,
 				B4CC9D9A20468DD700CFAF3C /* RoomDetailsViewModel.swift in Sources */,
+				3BF6B804204718E400C4D4E2 /* BookRoomViewModel.swift in Sources */,
 				3BA0768D2045AAA700EE43B6 /* DataService.swift in Sources */,
 				3BA076A42045D4E600EE43B6 /* UIViewExtension.swift in Sources */,
 				3BA076942045AD9200EE43B6 /* RoomBookingService.swift in Sources */,
+				3BF6B80B2047392A00C4D4E2 /* TCellAttendee.swift in Sources */,
 				3BA076672045A44100EE43B6 /* RoomListVC.swift in Sources */,
 				B4F16C4B2046CC1C00F48330 /* CollectionViewDataSource.swift in Sources */,
 				3BA076652045A44100EE43B6 /* AppDelegate.swift in Sources */,
+				3BF6B8082047326300C4D4E2 /* BookRoomResponse.swift in Sources */,
 				3BA076A22045D47400EE43B6 /* TableViewDataSource.swift in Sources */,
 				3BA076922045AC5500EE43B6 /* BaseRequest.swift in Sources */,
 				3BA076B02045FE2500EE43B6 /* RoomDetailsVC.swift in Sources */,

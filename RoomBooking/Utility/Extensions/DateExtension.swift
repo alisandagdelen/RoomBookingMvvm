@@ -11,7 +11,9 @@ import Foundation
 extension Date {
     var unixDate:String {
         let timestamp = self.timeIntervalSince1970
-        return String(describing: timestamp)
+        let delimiter = "."
+        guard let dateUnix = String(describing: timestamp).components(separatedBy: delimiter).first else { return "" }
+        return dateUnix
     }
     
     var callender:String {

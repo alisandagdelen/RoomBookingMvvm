@@ -20,8 +20,9 @@ extension Date {
         let dateFormatter = DateFormatter()
         dateFormatter.dateStyle = .medium
         dateFormatter.timeStyle = .none
-        dateFormatter.locale = Locale(identifier: "en_GB")
+        dateFormatter.locale = Locale(identifier: "de_DE")
         dateFormatter.setLocalizedDateFormatFromTemplate("dd MMMM yyyy")
         return dateFormatter.string(from: self)
     }
+    
 }

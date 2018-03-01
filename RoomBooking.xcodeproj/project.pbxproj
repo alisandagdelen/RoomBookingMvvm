@@ -35,7 +35,11 @@
 		3BF6B8082047326300C4D4E2 /* BookRoomResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BF6B8072047326300C4D4E2 /* BookRoomResponse.swift */; };
 		3BF6B80B2047392A00C4D4E2 /* TCellAttendee.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BF6B80A2047392A00C4D4E2 /* TCellAttendee.swift */; };
 		3BF6B80D2047395600C4D4E2 /* TCellAttendee.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3BF6B80C2047395600C4D4E2 /* TCellAttendee.xib */; };
+		B432D5582047F33800CD9CD4 /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B432D5572047F33800CD9CD4 /* UIColorExtension.swift */; };
+		B432D55A20481A0F00CD9CD4 /* AlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B432D55920481A0F00CD9CD4 /* AlertView.swift */; };
 		B4CC9D9A20468DD700CFAF3C /* RoomDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4CC9D9920468DD700CFAF3C /* RoomDetailsViewModel.swift */; };
+		B4D4F8412048639C005DBB74 /* FilterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4D4F8402048639C005DBB74 /* FilterView.swift */; };
+		B4D4F843204863A8005DBB74 /* FilterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B4D4F842204863A8005DBB74 /* FilterView.xib */; };
 		B4F16C4B2046CC1C00F48330 /* CollectionViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4F16C4A2046CC1C00F48330 /* CollectionViewDataSource.swift */; };
 		B4F16C4D2046D07900F48330 /* CCellRoomPhotos.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4F16C4C2046D07900F48330 /* CCellRoomPhotos.swift */; };
 		B4F16C4F2046D09500F48330 /* CCellRoomPhotos.xib in Resources */ = {isa = PBXBuildFile; fileRef = B4F16C4E2046D09500F48330 /* CCellRoomPhotos.xib */; };
@@ -90,7 +94,11 @@
 		A389CC31B163588749555330 /* Pods-RoomBooking.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RoomBooking.release.xcconfig"; path = "Pods/Target Support Files/Pods-RoomBooking/Pods-RoomBooking.release.xcconfig"; sourceTree = "<group>"; };
 		A3AD02DCBD461A1668239D8F /* Pods_RoomBookingTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RoomBookingTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AE3F134543EFA590BCB65A55 /* Pods-RoomBookingTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RoomBookingTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-RoomBookingTests/Pods-RoomBookingTests.release.xcconfig"; sourceTree = "<group>"; };
+		B432D5572047F33800CD9CD4 /* UIColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
+		B432D55920481A0F00CD9CD4 /* AlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertView.swift; sourceTree = "<group>"; };
 		B4CC9D9920468DD700CFAF3C /* RoomDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomDetailsViewModel.swift; sourceTree = "<group>"; };
+		B4D4F8402048639C005DBB74 /* FilterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterView.swift; sourceTree = "<group>"; };
+		B4D4F842204863A8005DBB74 /* FilterView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FilterView.xib; sourceTree = "<group>"; };
 		B4F16C4A2046CC1C00F48330 /* CollectionViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewDataSource.swift; sourceTree = "<group>"; };
 		B4F16C4C2046D07900F48330 /* CCellRoomPhotos.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CCellRoomPhotos.swift; sourceTree = "<group>"; };
 		B4F16C4E2046D09500F48330 /* CCellRoomPhotos.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CCellRoomPhotos.xib; sourceTree = "<group>"; };
@@ -226,6 +234,7 @@
 				3BA076A32045D4E600EE43B6 /* UIViewExtension.swift */,
 				3BA076A92045DA8400EE43B6 /* DateExtension.swift */,
 				3BF6B80520471D3F00C4D4E2 /* StringExtension.swift */,
+				B432D5572047F33800CD9CD4 /* UIColorExtension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -243,9 +252,11 @@
 		3BA0768A2045A51100EE43B6 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				B4D4F83F20486386005DBB74 /* FilterView */,
 				3BF6B8092047391100C4D4E2 /* TCellAttendee */,
 				B4F16C512046FEFC00F48330 /* CCellRoomPhotos */,
 				B4F16C502046FEF400F48330 /* TCellRoom */,
+				B432D55920481A0F00CD9CD4 /* AlertView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -277,6 +288,15 @@
 				3BF6B80C2047395600C4D4E2 /* TCellAttendee.xib */,
 			);
 			path = TCellAttendee;
+			sourceTree = "<group>";
+		};
+		B4D4F83F20486386005DBB74 /* FilterView */ = {
+			isa = PBXGroup;
+			children = (
+				B4D4F8402048639C005DBB74 /* FilterView.swift */,
+				B4D4F842204863A8005DBB74 /* FilterView.xib */,
+			);
+			path = FilterView;
 			sourceTree = "<group>";
 		};
 		B4F16C502046FEF400F48330 /* TCellRoom */ = {
@@ -400,6 +420,7 @@
 				B4F16C4F2046D09500F48330 /* CCellRoomPhotos.xib in Resources */,
 				3BA0766F2045A44100EE43B6 /* LaunchScreen.storyboard in Resources */,
 				3BF6B80D2047395600C4D4E2 /* TCellAttendee.xib in Resources */,
+				B4D4F843204863A8005DBB74 /* FilterView.xib in Resources */,
 				3BA0766C2045A44100EE43B6 /* Assets.xcassets in Resources */,
 				3BA0766A2045A44100EE43B6 /* Main.storyboard in Resources */,
 				3BA076A02045D17500EE43B6 /* TCellRoom.xib in Resources */,
@@ -460,6 +481,7 @@
 				"${BUILT_PRODUCTS_DIR}/AlamofireObjectMapper/AlamofireObjectMapper.framework",
 				"${BUILT_PRODUCTS_DIR}/ObjectMapper/ObjectMapper.framework",
 				"${BUILT_PRODUCTS_DIR}/PhoneNumberKit/PhoneNumberKit.framework",
+				"${BUILT_PRODUCTS_DIR}/SCLAlertView/SCLAlertView.framework",
 				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
@@ -468,6 +490,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AlamofireObjectMapper.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ObjectMapper.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PhoneNumberKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SCLAlertView.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -545,6 +568,7 @@
 				3BA076982045AF7700EE43B6 /* Room.swift in Sources */,
 				B4F16C532047002000F48330 /* Booking.swift in Sources */,
 				B4CC9D9A20468DD700CFAF3C /* RoomDetailsViewModel.swift in Sources */,
+				B432D5582047F33800CD9CD4 /* UIColorExtension.swift in Sources */,
 				3BF6B804204718E400C4D4E2 /* BookRoomViewModel.swift in Sources */,
 				3BA0768D2045AAA700EE43B6 /* DataService.swift in Sources */,
 				3BA076A42045D4E600EE43B6 /* UIViewExtension.swift in Sources */,
@@ -555,7 +579,9 @@
 				3BA076652045A44100EE43B6 /* AppDelegate.swift in Sources */,
 				3BF6B8082047326300C4D4E2 /* BookRoomResponse.swift in Sources */,
 				3BA076A22045D47400EE43B6 /* TableViewDataSource.swift in Sources */,
+				B432D55A20481A0F00CD9CD4 /* AlertView.swift in Sources */,
 				3BA076922045AC5500EE43B6 /* BaseRequest.swift in Sources */,
+				B4D4F8412048639C005DBB74 /* FilterView.swift in Sources */,
 				3BA076B02045FE2500EE43B6 /* RoomDetailsVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -713,6 +739,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 4BE9CR5D8N;
 				INFOPLIST_FILE = "$(SRCROOT)/RoomBooking/Supporting Files/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.alisandagdelen.RoomBooking;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -729,6 +756,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 4BE9CR5D8N;
 				INFOPLIST_FILE = "$(SRCROOT)/RoomBooking/Supporting Files/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.alisandagdelen.RoomBooking;
 				PRODUCT_NAME = "$(TARGET_NAME)";

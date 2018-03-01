@@ -12,6 +12,7 @@ import SCLAlertView
 
 class BookRoomVC: UIViewController {
     
+    @IBOutlet weak var viewTimeBar: UIView!
     @IBOutlet weak var btnBookRoom: UIButton!
     @IBOutlet weak var btnAddAttendee: UIButton!
     @IBOutlet weak var viewTableBorder: UIView!
@@ -38,9 +39,13 @@ class BookRoomVC: UIViewController {
         tblAttendees.register(UINib(nibName: TCellAttendee.nibName, bundle: nil), forCellReuseIdentifier: TCellAttendee.nibName)
         tblAttendees.delegate = self
         self.tblAttendees.dataSource = self
+        
         btnAddAttendee.backgroundColor = UIColor.oneaPurple
         btnBookRoom.backgroundColor = UIColor.oneaDarkGreen
         viewTableBorder.backgroundColor = UIColor.oneaPink
+        
+        let viewTimeBarGesture = UITapGestureRecognizer(target: self, action:  #selector(self.chooseTime(_:)))
+        viewTimeBar.addGestureRecognizer(viewTimeBarGesture)
     }
     
     func fillUI() {
@@ -73,9 +78,13 @@ class BookRoomVC: UIViewController {
         }
     }
     
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    @objc func chooseTime(_ sender : UITapGestureRecognizer) {
+        let selectTimeVC = self.storyboard!.instantiateViewController(withIdentifier: String(describing: SelectTimeVC.self)) as! SelectTimeVC
+        selectTimeVC.availableHours = bookRoomViewModel?.availableHours
+        self.addChildViewController(selectTimeVC)
+        selectTimeVC.view.frame = self.view.frame
+        self.view.addSubview(selectTimeVC.view)
+        selectTimeVC.didMove(toParentViewController: self)
     }
     
     @IBAction func actBtnAddAttendee(_ sender: UIButton) {

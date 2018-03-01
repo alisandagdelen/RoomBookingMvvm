@@ -23,6 +23,7 @@ protocol BookRoomViewModelProtocol {
     var invalidAttendeeFields: Dynamic<[InvalidFieldType]> { get }
     var invalidBookingFields: Dynamic<[InvalidFieldType]> { get }
     var roomName: String { get }
+    var availableHours:[String] { get }
     func addAttendee(name:String, email:String, phoneNo:String)
     func deleteAttendee(_ attendee:Attendee)
     func bookRoom(title:String, description:String, _ completion: @escaping SuccessBlock)
@@ -36,6 +37,10 @@ class BookRoomViewModel: NSObject, BookRoomViewModelProtocol {
     
     var roomName: String {
         return room.name
+    }
+
+    var availableHours:[String] {
+        return room.availableHours
     }
 
     private var room:Room!

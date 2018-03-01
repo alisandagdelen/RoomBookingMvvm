@@ -40,6 +40,8 @@
 		B4CC9D9A20468DD700CFAF3C /* RoomDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4CC9D9920468DD700CFAF3C /* RoomDetailsViewModel.swift */; };
 		B4D4F8412048639C005DBB74 /* FilterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4D4F8402048639C005DBB74 /* FilterView.swift */; };
 		B4D4F843204863A8005DBB74 /* FilterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B4D4F842204863A8005DBB74 /* FilterView.xib */; };
+		B4D4F84A20489A21005DBB74 /* SelectTimeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4D4F84920489A21005DBB74 /* SelectTimeVC.swift */; };
+		B4D4F84C20489BF1005DBB74 /* BasePopupVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4D4F84B20489BF1005DBB74 /* BasePopupVC.swift */; };
 		B4F16C4B2046CC1C00F48330 /* CollectionViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4F16C4A2046CC1C00F48330 /* CollectionViewDataSource.swift */; };
 		B4F16C4D2046D07900F48330 /* CCellRoomPhotos.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4F16C4C2046D07900F48330 /* CCellRoomPhotos.swift */; };
 		B4F16C4F2046D09500F48330 /* CCellRoomPhotos.xib in Resources */ = {isa = PBXBuildFile; fileRef = B4F16C4E2046D09500F48330 /* CCellRoomPhotos.xib */; };
@@ -99,6 +101,8 @@
 		B4CC9D9920468DD700CFAF3C /* RoomDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomDetailsViewModel.swift; sourceTree = "<group>"; };
 		B4D4F8402048639C005DBB74 /* FilterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterView.swift; sourceTree = "<group>"; };
 		B4D4F842204863A8005DBB74 /* FilterView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FilterView.xib; sourceTree = "<group>"; };
+		B4D4F84920489A21005DBB74 /* SelectTimeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectTimeVC.swift; sourceTree = "<group>"; };
+		B4D4F84B20489BF1005DBB74 /* BasePopupVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasePopupVC.swift; sourceTree = "<group>"; };
 		B4F16C4A2046CC1C00F48330 /* CollectionViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewDataSource.swift; sourceTree = "<group>"; };
 		B4F16C4C2046D07900F48330 /* CCellRoomPhotos.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CCellRoomPhotos.swift; sourceTree = "<group>"; };
 		B4F16C4E2046D09500F48330 /* CCellRoomPhotos.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CCellRoomPhotos.xib; sourceTree = "<group>"; };
@@ -267,6 +271,8 @@
 				3BA076662045A44100EE43B6 /* RoomListVC.swift */,
 				3BA076AF2045FE2500EE43B6 /* RoomDetailsVC.swift */,
 				3BA076B12047084F00EE43B6 /* BookRoomVC.swift */,
+				B4D4F84920489A21005DBB74 /* SelectTimeVC.swift */,
+				B4D4F84B20489BF1005DBB74 /* BasePopupVC.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -573,6 +579,8 @@
 				3BA0768D2045AAA700EE43B6 /* DataService.swift in Sources */,
 				3BA076A42045D4E600EE43B6 /* UIViewExtension.swift in Sources */,
 				3BA076942045AD9200EE43B6 /* RoomBookingService.swift in Sources */,
+				B4D4F84C20489BF1005DBB74 /* BasePopupVC.swift in Sources */,
+				B4D4F84A20489A21005DBB74 /* SelectTimeVC.swift in Sources */,
 				3BF6B80B2047392A00C4D4E2 /* TCellAttendee.swift in Sources */,
 				3BA076672045A44100EE43B6 /* RoomListVC.swift in Sources */,
 				B4F16C4B2046CC1C00F48330 /* CollectionViewDataSource.swift in Sources */,

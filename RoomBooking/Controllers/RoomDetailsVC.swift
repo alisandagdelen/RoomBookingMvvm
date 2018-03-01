@@ -21,6 +21,7 @@ class RoomDetailsVC: UIViewController {
     @IBOutlet weak var lblSize: UILabel!
     @IBOutlet weak var lblCapacity: UILabel!
     @IBOutlet weak var lblEquipments: UILabel!
+    @IBOutlet weak var btnBookRoom: UIButton!
     weak var delegate:RoomDetailsVCDelegate?
     
     private var dataSource: CollectionViewDataSource<CCellRoomPhotos, String>!
@@ -34,9 +35,7 @@ class RoomDetailsVC: UIViewController {
         super.viewDidLoad()
         
         showAnimate()
-        collectionPhotos.delegate = self
-        collectionPhotos.backgroundColor = self.view.backgroundColor
-        collectionPhotos.register(UINib(nibName: CCellRoomPhotos.nibName, bundle: nil), forCellWithReuseIdentifier: CCellRoomPhotos.nibName)
+        setupUI()
         fillUI()
     }
     
@@ -58,10 +57,14 @@ class RoomDetailsVC: UIViewController {
         lblLocation.text = roomDetailsViewModel.room.value.location
     }
     
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    func setupUI() {
+        collectionPhotos.delegate = self
+        collectionPhotos.register(UINib(nibName: CCellRoomPhotos.nibName, bundle: nil), forCellWithReuseIdentifier: CCellRoomPhotos.nibName)
+        collectionPhotos.backgroundColor = UIColor.white
+        btnBookRoom.backgroundColor = UIColor.oneaDarkGreen
+        
     }
+
     @IBAction func actBtnClose(_ sender: UIButton) {
         removeAnimate(closeType: .quit)
     }

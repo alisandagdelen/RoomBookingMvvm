@@ -11,10 +11,12 @@ import UIKit
 class RoomListVC: UIViewController {
     
     @IBOutlet weak var tblRooms: UITableView!
-
+    @IBOutlet weak var viewTop: UIView!
+    
     private let rowHeight:CGFloat = 120
     private var dataSource: TableViewDataSource<TCellRoom, Room>!
     
+    var filterView:FilterView?
     var roomListViewModel: RoomListViewModelProtocol?
     var navigationTitleButton:UIButton!
     
@@ -22,8 +24,7 @@ class RoomListVC: UIViewController {
         super.viewDidLoad()
 
         setupNavigationItems()
-        tblRooms.delegate = self
-        tblRooms.register(UINib(nibName: TCellRoom.nibName, bundle: nil), forCellReuseIdentifier: TCellRoom.nibName)
+        setupUI()
         roomListViewModel = RoomListViewModel()
         fillUI()
         // Do any additional setup after loading the view, typically from a nib.
@@ -41,12 +42,21 @@ class RoomListVC: UIViewController {
             }
             self.tblRooms.dataSource = self.dataSource
             self.tblRooms.reloadData()
+            self.viewTop.isHidden = rooms.count == 0 ? true : false
         }
         
         roomListViewModel.selectedDate.bind { [unowned self] in
             self.navigationTitleButton.setTitle($0.callender, for: .normal)
         }
         
+    }
+    
+    func setupUI() {
+        tblRooms.delegate = self
+        tblRooms.register(UINib(nibName: TCellRoom.nibName, bundle: nil), forCellReuseIdentifier: TCellRoom.nibName)
+        filterView = FilterView.fromNib as? FilterView
+        let appearPoint:CGFloat = self.viewTop.frame.origin.y + self.viewTop.frame.size.height
+        filterView?.frame = CGRect(x: 0, y: appearPoint, width: self.view.frame.size.width, height: 0)
     }
     
     override func didReceiveMemoryWarning() {
@@ -76,6 +86,23 @@ class RoomListVC: UIViewController {
         roomDetailVC.view.frame = self.view.frame
         self.view.addSubview(roomDetailVC.view)
         roomDetailVC.didMove(toParentViewController: self)
+    }
+    
+    func showOrHideFilters() {
+        guard let filterView = filterView else { return }
+        
+        if self.view.subviews.contains(filterView) {
+            UIView.animate(withDuration: 0.5, animations: {
+                filterView.frame.size.height = 0
+            }, completion: { (success) in
+                filterView.removeFromSuperview()
+            })
+        } else {
+            self.view.addSubview(filterView)
+            UIView.animate(withDuration: 0.5, animations: {
+                filterView.frame.size.height = 210
+            })
+        }
     }
     
     func presentBookRoomVC(_ room:Room) {
@@ -108,9 +135,18 @@ class RoomListVC: UIViewController {
 //        picker.datePickerMode = .date
 //        picker.backgroundColor = UIColor.gray
 //        picker.addTarget(self, action: #selector(dateChanged(_:)), for: .valueChanged)
-//        picker.frame = CGRect(x: 0, y: (self.navigationController?.navigationBar.frame.size.height)!, width: self.view.frame.size.width, height: 300)
-//        self.view.addSubview(picker)
+//        
+//        let appearPoint:CGFloat = self.viewTop.frame.origin.y + self.viewTop.frame.size.height
+//        picker.frame = CGRect(x: 0, y: appearPoint, width: self.view.frame.size.width, height: 0)
+//            self.view.addSubview(picker)
+//        UIView.animate(withDuration: 1) {
+//            picker.frame.size.height = 300
+        }
         
+        
+    }
+    @IBAction func actFilterBtn(_ sender: UIButton) {
+        showOrHideFilters()
     }
 }
 

@@ -8,9 +8,13 @@
 
 import UIKit
 import PhoneNumberKit
+import SCLAlertView
 
 class BookRoomVC: UIViewController {
     
+    @IBOutlet weak var btnBookRoom: UIButton!
+    @IBOutlet weak var btnAddAttendee: UIButton!
+    @IBOutlet weak var viewTableBorder: UIView!
     @IBOutlet weak var lblRoomName: UILabel!
     @IBOutlet weak var tblAttendees: UITableView!
     @IBOutlet weak var txtAttendeeName: UITextField!
@@ -25,15 +29,18 @@ class BookRoomVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupTableView()
+        setupUI()
         fillUI()
         // Do any additional setup after loading the view.
     }
     
-    func setupTableView() {
+    func setupUI() {
         tblAttendees.register(UINib(nibName: TCellAttendee.nibName, bundle: nil), forCellReuseIdentifier: TCellAttendee.nibName)
         tblAttendees.delegate = self
         self.tblAttendees.dataSource = self
+        btnAddAttendee.backgroundColor = UIColor.oneaPurple
+        btnBookRoom.backgroundColor = UIColor.oneaDarkGreen
+        viewTableBorder.backgroundColor = UIColor.oneaPink
     }
     
     func fillUI() {
@@ -43,6 +50,8 @@ class BookRoomVC: UIViewController {
             self.tblAttendees.reloadData()
         }
         
+        lblRoomName.text = bookRoomViewModel.roomName
+        
         bookRoomViewModel.invalidAttendeeFields.bind { [unowned self] in
             print($0)
             if $0.count == 0 {
@@ -50,27 +59,18 @@ class BookRoomVC: UIViewController {
                 self.txtAttendeeEmail.text = ""
                 self.txtAttendeePhone.text = ""
             } else {
-                let alertMessages = $0.map({$0.rawValue })
-                print(alertMessages)
-                self.showAlert(title: "Invalid Attendee Field(s)", message: alertMessages.joined(separator: ", "))
+                let alertMessages = $0.map({$0.rawValue }).joined(separator: ", ")
+                AlertView.show(.warning, title: "Invalid Attendee Field(s)", subTitle: alertMessages, showCloseButton: true, duration: 0)
             }
         }
         
-        bookRoomViewModel.invalidBookingFields.bind { [unowned self] in
+        bookRoomViewModel.invalidBookingFields.bind {
             if $0.count != 0 {
-                let alertMessages = $0.map({$0.rawValue })
+                let alertMessages = $0.map({$0.rawValue }).joined(separator: ", ")
                 print(alertMessages)
-                self.showAlert(title: "Invalid Booking Field(s)", message: alertMessages.joined(separator: ", "))
+                AlertView.show(.warning, title: "Invalid Booking Field(s)", subTitle: alertMessages, showCloseButton: true, duration: 0)
             }
         }
-    }
-    
-    func showAlert(title:String, message:String) {
-        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: "Ok", style: .default) { action in
-            
-        })
-        self.present(alert, animated: true, completion: nil)
     }
     
     override func didReceiveMemoryWarning() {
@@ -85,13 +85,13 @@ class BookRoomVC: UIViewController {
     
     @IBAction func actBookRoom(_ sender: UIButton) {
         guard let title = txtBookingTitle.text, let description = txtViewBookingDesc.text else { return }
+        AlertView.show()
         bookRoomViewModel?.bookRoom(title: title, description: description, { [unowned self] (success) in
             if success {
                 self.navigationController?.popViewController(animated: true)
-
-                self.showAlert(title: "Success", message: "Booking Complete")
+                AlertView.show(.success, "Booking Complete")
             } else {
-                self.showAlert(title: "Failed", message: "Booking Failed")
+                AlertView.show(.error, title: "Failed", subTitle: "Booking Failed", showCloseButton: true, duration: 0)
             }
         })
     }

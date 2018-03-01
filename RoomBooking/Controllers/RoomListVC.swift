@@ -42,7 +42,6 @@ class RoomListVC: UIViewController {
             }
             self.tblRooms.dataSource = self.dataSource
             self.tblRooms.reloadData()
-            self.viewTop.isHidden = rooms.count == 0 ? true : false
         }
         
         roomListViewModel.selectedDate.bind { [unowned self] in
@@ -135,7 +134,7 @@ class RoomListVC: UIViewController {
 //        picker.datePickerMode = .date
 //        picker.backgroundColor = UIColor.gray
 //        picker.addTarget(self, action: #selector(dateChanged(_:)), for: .valueChanged)
-//        
+//
 //        let appearPoint:CGFloat = self.viewTop.frame.origin.y + self.viewTop.frame.size.height
 //        picker.frame = CGRect(x: 0, y: appearPoint, width: self.view.frame.size.width, height: 0)
 //            self.view.addSubview(picker)

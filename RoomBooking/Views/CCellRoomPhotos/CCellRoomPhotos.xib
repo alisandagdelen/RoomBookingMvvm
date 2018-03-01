@@ -46,6 +46,7 @@
             <size key="customSize" width="157" height="154"/>
             <connections>
                 <outlet property="imgRoomPhoto" destination="9bV-Ss-zrz" id="D5n-Ef-xxe"/>
+                <outlet property="viewBorder" destination="dz4-t3-JlF" id="Rcz-Vk-8Zf"/>
             </connections>
             <point key="canvasLocation" x="120.5" y="101"/>
         </collectionViewCell>

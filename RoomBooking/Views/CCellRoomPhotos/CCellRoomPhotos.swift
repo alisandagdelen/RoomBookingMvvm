@@ -10,5 +10,11 @@ import UIKit
 
 class CCellRoomPhotos: UICollectionViewCell {
     
+    @IBOutlet weak var viewBorder: UIView!
     @IBOutlet weak var imgRoomPhoto: UIImageView!
+    
+    override func awakeFromNib() {
+        super.awakeFromNib()
+            viewBorder.backgroundColor = UIColor.oneaGreen
+    }
 }

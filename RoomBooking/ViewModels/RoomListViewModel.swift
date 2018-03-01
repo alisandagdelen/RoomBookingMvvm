@@ -33,10 +33,12 @@ class RoomListViewModel: NSObject, RoomListViewModelProtocol {
     }
     
     func getRooms() {
+        AlertView.show()
         dataService.getRooms(GetRoomsRequest(date: selectedDateString)) { (rooms:[Room]?, error:Error?) in
             if let rooms = rooms {
                 self.rooms.value = rooms
             }
+        AlertView.dismiss()
         }
     }
     

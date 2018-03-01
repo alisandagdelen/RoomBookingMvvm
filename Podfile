@@ -12,7 +12,7 @@ target 'RoomBooking' do
     pod 'AlamofireObjectMapper'
     pod 'SDWebImage'
     pod	‘PhoneNumberKit’
-
+    pod 'SCLAlertView', :git => 'https://github.com/vikmeup/SCLAlertView-Swift', :branch => 'master'
   target 'RoomBookingTests' do
     inherit! :search_paths
     # Pods for testing

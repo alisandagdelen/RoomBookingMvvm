@@ -12,6 +12,7 @@ class RoomListVC: UIViewController {
     
     @IBOutlet weak var tblRooms: UITableView!
     @IBOutlet weak var viewTop: UIView!
+    @IBOutlet weak var btnFilter: UIButton!
     
     private let rowHeight:CGFloat = 120
     private var dataSource: TableViewDataSource<TCellRoom, Room>!
@@ -56,6 +57,7 @@ class RoomListVC: UIViewController {
         filterView = FilterView.fromNib as? FilterView
         let appearPoint:CGFloat = self.viewTop.frame.origin.y + self.viewTop.frame.size.height
         filterView?.frame = CGRect(x: 0, y: appearPoint, width: self.view.frame.size.width, height: 0)
+        filterView?.btnApply.addTarget(self, action: #selector(applyFilters(_:)), for: .touchUpInside)
     }
     
     override func didReceiveMemoryWarning() {
@@ -91,16 +93,11 @@ class RoomListVC: UIViewController {
         guard let filterView = filterView else { return }
         
         if self.view.subviews.contains(filterView) {
-            UIView.animate(withDuration: 0.5, animations: {
-                filterView.frame.size.height = 0
-            }, completion: { (success) in
-                filterView.removeFromSuperview()
-            })
+            filterView.frame.size.height = 0
+            filterView.removeFromSuperview()
         } else {
             self.view.addSubview(filterView)
-            UIView.animate(withDuration: 0.5, animations: {
-                filterView.frame.size.height = 210
-            })
+            filterView.frame.size.height = 210
         }
     }
     
@@ -110,6 +107,27 @@ class RoomListVC: UIViewController {
         let bookRoomVC = self.storyboard!.instantiateViewController(withIdentifier: String(describing: BookRoomVC.self)) as! BookRoomVC
         bookRoomVC.bookRoomViewModel = BookRoomViewModel(room: room, date: roomListViewModel.selectedDate.value)
         self.navigationController?.pushViewController(bookRoomVC, animated: true)
+    }
+    
+    @objc func applyFilters(_ sender:UIButton) {
+        guard let filterView = filterView else { return }
+        
+        var filterCount = 0
+        let availableNextHour = filterView.switchAvailableNextHour.isOn
+        guard let name = filterView.txtRoomName.text else { return }
+        guard let size = filterView.txtSize.text else { return }
+        guard let capacity = filterView.txtCapacity.text else { return }
+
+        filterCount = availableNextHour ? filterCount + 1 : filterCount
+        filterCount = name.count > 0 ? filterCount + 1 : filterCount
+        filterCount = size.count > 0 ? filterCount + 1 : filterCount
+        filterCount = capacity.count > 0 ? filterCount + 1 : filterCount
+        let filterTitle = filterCount == 0 ? "Filter" : "Filters(\(filterCount))"
+        btnFilter.setTitle(filterTitle, for: .normal)
+        
+        roomListViewModel?.applyFilters(availableNextHour: availableNextHour, name: name, size: size, capacity: capacity)
+        
+        showOrHideFilters()
     }
     
     @objc func dateChanged(_ sender:UIDatePicker) {

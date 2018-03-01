@@ -112,7 +112,7 @@ class BookRoomViewModel: NSObject, BookRoomViewModelProtocol {
         if (attendees.value.count < 1) {
             invalidFields.append(.emptyAttendees)
         }
-        invalidAttendeeFields.value = invalidFields
+        invalidBookingFields.value = invalidFields
         let result = invalidBookingFields.value.count == 0 ? true : false
         return result
     }

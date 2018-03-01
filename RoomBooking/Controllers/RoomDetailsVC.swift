@@ -13,7 +13,7 @@ protocol RoomDetailsVCDelegate:class {
     func bookRoom(_ room:Room)
 }
 
-class RoomDetailsVC: UIViewController {
+class RoomDetailsVC: BasePopupVC {
     
     @IBOutlet weak var lblName: UILabel!
     @IBOutlet weak var collectionPhotos: UICollectionView!
@@ -71,16 +71,6 @@ class RoomDetailsVC: UIViewController {
     
     @IBAction func actBookRoom(_ sender: UIButton) {
         removeAnimate(closeType: .book)
-    }
-    
-    func showAnimate() {
-        self.view.backgroundColor = UIColor.black.withAlphaComponent(0.8)
-        self.view.transform = CGAffineTransform(scaleX: 1.3, y: 1.3)
-        self.view.alpha = 0.0;
-        UIView.animate(withDuration: 0.25, animations: {
-            self.view.alpha = 1.0
-            self.view.transform = CGAffineTransform(scaleX: 1.0, y: 1.0)
-        });
     }
     
     func removeAnimate(closeType: CloseType) {

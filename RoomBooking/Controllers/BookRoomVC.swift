@@ -159,6 +159,8 @@ extension BookRoomVC:UITableViewDelegate, UITableViewDataSource, SelectTimeVCDel
     
     func timeSelected(beginTime: String, endTime:String) {
         bookRoomViewModel?.selectBookingTime(timeStart: beginTime, timeEnd: endTime)
+        lblAvailableHours.text = "Selected time: \(beginTime) - \(endTime)"
+        lblAvailableHours.textColor = UIColor.oneaOrange
     }
     
 }

@@ -10,6 +10,7 @@ import UIKit
 
 class TCellRoom: UITableViewCell {
 
+    @IBOutlet weak var lblAvailable: UILabel!
     @IBOutlet weak var lblName: UILabel!
     @IBOutlet weak var lblCapacity: UILabel!
     @IBOutlet weak var lblSize: UILabel!
@@ -17,6 +18,7 @@ class TCellRoom: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        lblAvailable.textColor = UIColor.oneaDarkGreen
     
     }
 

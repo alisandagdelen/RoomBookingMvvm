@@ -15,6 +15,8 @@ protocol RoomDetailsVCDelegate:class {
 
 class RoomDetailsVC: BasePopupVC {
     
+    @IBOutlet weak var lblAvailable: UILabel!
+    @IBOutlet weak var lblAvailableTitle: UILabel!
     @IBOutlet weak var lblName: UILabel!
     @IBOutlet weak var collectionPhotos: UICollectionView!
     @IBOutlet weak var lblLocation: UILabel!
@@ -52,6 +54,7 @@ class RoomDetailsVC: BasePopupVC {
         self.collectionPhotos.reloadData()
         lblName.text = roomDetailsViewModel.room.value.name
         lblSize.text = roomDetailsViewModel.room.value.size
+        lblAvailable.text = roomDetailsViewModel.room.value.availableHours.joined(separator: " | ")
         lblCapacity.text = "\(roomDetailsViewModel.room.value.capacity)"
         lblEquipments.text = roomDetailsViewModel.room.value.equipments.joined(separator: ", ")
         lblLocation.text = roomDetailsViewModel.room.value.location
@@ -62,6 +65,8 @@ class RoomDetailsVC: BasePopupVC {
         collectionPhotos.register(UINib(nibName: CCellRoomPhotos.nibName, bundle: nil), forCellWithReuseIdentifier: CCellRoomPhotos.nibName)
         collectionPhotos.backgroundColor = UIColor.white
         btnBookRoom.backgroundColor = UIColor.oneaDarkGreen
+        lblAvailable.textColor = UIColor.oneaDarkGreen
+        lblAvailableTitle.textColor = UIColor.oneaGreen
         
     }
 

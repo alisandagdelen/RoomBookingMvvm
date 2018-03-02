@@ -36,6 +36,7 @@ class RoomListVC: UIViewController {
         guard let roomListViewModel = roomListViewModel else { return }
         roomListViewModel.rooms.bind { [unowned self] rooms in
             self.dataSource = TableViewDataSource<TCellRoom, Room>(cellIdentifier: TCellRoom.nibName, items: rooms) { (cell, room) in
+                cell.lblAvailable.text = room.availableHours.joined(separator: " | ")
                 cell.lblName.text = room.name
                 cell.lblSize.text = room.size
                 cell.lblCapacity.text = "\(room.capacity)"

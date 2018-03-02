@@ -16,6 +16,7 @@ protocol RoomListViewModelProtocol {
 }
 
 class RoomListViewModel: NSObject, RoomListViewModelProtocol {
+    // MARK: Properties
     
     var selectedDate: Dynamic<Date>
     var rooms: Dynamic<[Room]>
@@ -25,6 +26,8 @@ class RoomListViewModel: NSObject, RoomListViewModelProtocol {
         return selectedDate.value.unixDate
     }
     
+    // MARK: Initializer
+    
     init(date: Date = Date(), dataService:RoomBookingApi = RoomBookingService.sharedInstance) {
         self.dataService = dataService
         self.selectedDate = Dynamic(date)
@@ -33,6 +36,8 @@ class RoomListViewModel: NSObject, RoomListViewModelProtocol {
         self.getRooms()
     }
     
+    // MARK: Service methods
+    
     private func getRooms() {
         AlertView.show()
         dataService.getRooms(GetRoomsRequest(date: selectedDateString)) { (rooms:[Room]?, error:Error?) in
@@ -40,20 +45,24 @@ class RoomListViewModel: NSObject, RoomListViewModelProtocol {
                 self.allRoomsAtDate = rooms
                 self.rooms.value = rooms
             }
-        AlertView.dismiss()
+            AlertView.dismiss()
         }
     }
+    
+    // MARK: Model modify methods
     
     func changeDate(_ date: Date) {
         self.selectedDate.value = date
         getRooms()
     }
-
+    
     func applyFilters(availableNextHour:Bool, name:String, size:String, capacity:String) {
         var filteredRooms:[Room] = allRoomsAtDate
         filteredRooms = name.count > 0 ? filteredRooms.filter { $0.name == name } : filteredRooms
-        filteredRooms = size.count > 0 ? filteredRooms.filter { $0.size == size + "m²"} : filteredRooms
-        filteredRooms = capacity.count > 0 ? filteredRooms.filter { $0.capacity == Int(capacity) } : filteredRooms
+        filteredRooms = size.count > 0 ? filteredRooms.filter { Int($0.size.replacingOccurrences(of: "m²", with: ""))! >= Int(size) ?? 0} : filteredRooms
+        filteredRooms = capacity.count > 0 ? filteredRooms.filter { $0.capacity >= Int(capacity) ?? 0} : filteredRooms
+        if availableNextHour {
+        }
         rooms.value = filteredRooms
     }
 }

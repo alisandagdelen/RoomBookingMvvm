@@ -81,6 +81,7 @@ class BookRoomVC: UIViewController {
     @objc func chooseTime(_ sender : UITapGestureRecognizer) {
         let selectTimeVC = self.storyboard!.instantiateViewController(withIdentifier: String(describing: SelectTimeVC.self)) as! SelectTimeVC
         selectTimeVC.availableHours = bookRoomViewModel?.availableHours
+        selectTimeVC.delegate = self
         self.addChildViewController(selectTimeVC)
         selectTimeVC.view.frame = self.view.frame
         self.view.addSubview(selectTimeVC.view)
@@ -106,7 +107,8 @@ class BookRoomVC: UIViewController {
     }
 }
 
-extension BookRoomVC:UITableViewDelegate, UITableViewDataSource {
+extension BookRoomVC:UITableViewDelegate, UITableViewDataSource, SelectTimeVCDelegate {
+ 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return bookRoomViewModel?.attendees.value.count ?? 0
     }
@@ -134,4 +136,9 @@ extension BookRoomVC:UITableViewDelegate, UITableViewDataSource {
             }
         }
     }
+    
+    func timeSelected(beginTime: String, endTime:String) {
+        bookRoomViewModel?.selectBookingTime(timeStart: beginTime, timeEnd: endTime)
+    }
+    
 }

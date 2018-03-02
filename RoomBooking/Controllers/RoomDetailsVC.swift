@@ -15,6 +15,8 @@ protocol RoomDetailsVCDelegate:class {
 
 class RoomDetailsVC: BasePopupVC {
     
+    // MARK: Properties
+
     @IBOutlet weak var lblAvailable: UILabel!
     @IBOutlet weak var lblAvailableTitle: UILabel!
     @IBOutlet weak var lblName: UILabel!
@@ -33,6 +35,8 @@ class RoomDetailsVC: BasePopupVC {
         case quit, book
     }
     
+    // MARK: Lifecycle
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -40,6 +44,8 @@ class RoomDetailsVC: BasePopupVC {
         setupUI()
         fillUI()
     }
+    
+    // MARK: Binding
     
     func fillUI() {
         
@@ -60,6 +66,8 @@ class RoomDetailsVC: BasePopupVC {
         lblLocation.text = roomDetailsViewModel.room.value.location
     }
     
+    // MARK: UI Setup methods
+    
     func setupUI() {
         collectionPhotos.delegate = self
         collectionPhotos.register(UINib(nibName: CCellRoomPhotos.nibName, bundle: nil), forCellWithReuseIdentifier: CCellRoomPhotos.nibName)
@@ -69,6 +77,8 @@ class RoomDetailsVC: BasePopupVC {
         lblAvailableTitle.textColor = UIColor.oneaGreen
         
     }
+
+    // MARK: Button Actions
 
     @IBAction func actBtnClose(_ sender: UIButton) {
         removeAnimate(closeType: .quit)
@@ -96,6 +106,8 @@ class RoomDetailsVC: BasePopupVC {
         });
     }
 }
+
+// MARK: Delegate methods
 
 extension RoomDetailsVC: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {

@@ -33,6 +33,8 @@ protocol BookRoomViewModelProtocol {
 
 class BookRoomViewModel: NSObject, BookRoomViewModelProtocol {
     
+    // MARK: Properties
+    
     var invalidAttendeeFields: Dynamic<[InvalidFieldType]>
     var invalidBookingFields: Dynamic<[InvalidFieldType]>
     var attendees: Dynamic<[Attendee]>
@@ -40,16 +42,18 @@ class BookRoomViewModel: NSObject, BookRoomViewModelProtocol {
     var roomName: String {
         return room.name
     }
-
+    
     var availableHours:[String] {
         return room.availableHours
     }
-
+    
     private var room:Room!
     private var date:Date!
     private var dataService:RoomBookingApi
     private var beginTime:String!
     private var endTime:String!
+    
+    // MARK: Initializer
     
     init(room:Room, date:Date, dataService:RoomBookingApi = RoomBookingService.sharedInstance) {
         self.room = room
@@ -62,6 +66,8 @@ class BookRoomViewModel: NSObject, BookRoomViewModelProtocol {
         self.endTime = ""
         super.init()
     }
+    
+    // MARK: Model modify methods
     
     func addAttendee(name:String, email:String, phoneNo:String) {
         if validateAttendeeFields(name: name, email: email, phoneNo: phoneNo) {
@@ -88,6 +94,8 @@ class BookRoomViewModel: NSObject, BookRoomViewModelProtocol {
         endTime = endDateUnix
     }
     
+    // MARK: Service methods
+    
     func bookRoom(title: String, description: String, _ completion: @escaping SuccessBlock) {
         if validateBookingFields(title: title, description: description) {
             AlertView.show()
@@ -96,7 +104,11 @@ class BookRoomViewModel: NSObject, BookRoomViewModelProtocol {
             dataService.postBooking(request, { (response, error) in
                 if let response = response {
                     completion(response.success)
-                    AlertView.show(.success, "Booking Complete")
+                    if response.success {
+                        AlertView.show(.success, "Booking Complete")
+                    } else {
+                        AlertView.show(.error, title: "Failed", subTitle: "Booking Failed", showCloseButton: true, duration: 0)
+                    }
                 } else {
                     completion(false)
                     AlertView.show(.error, title: "Failed", subTitle: "Booking Failed", showCloseButton: true, duration: 0)
@@ -104,6 +116,8 @@ class BookRoomViewModel: NSObject, BookRoomViewModelProtocol {
             })
         }
     }
+    
+    // MARK: Utility methods
     
     private func formatBookingDate(hour:Int, minute:Int) -> String? {
         var dateComponents = DateComponents()
@@ -137,7 +151,7 @@ class BookRoomViewModel: NSObject, BookRoomViewModelProtocol {
     
     private func validateBookingFields(title:String, description:String) -> Bool {
         var invalidFields:[InvalidFieldType] = []
-
+        
         if (title.count < 1) {
             invalidFields.append(.title)
         }

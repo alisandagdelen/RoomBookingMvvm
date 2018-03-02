@@ -10,6 +10,8 @@ import UIKit
 
 class RoomListVC: UIViewController {
     
+    // MARK: Properties
+    
     @IBOutlet weak var tblRooms: UITableView!
     @IBOutlet weak var viewTop: UIView!
     @IBOutlet weak var btnFilter: UIButton!
@@ -21,15 +23,19 @@ class RoomListVC: UIViewController {
     var roomListViewModel: RoomListViewModelProtocol?
     var navigationTitleButton:UIButton!
     
+    // MARK: Lifecycle
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         setupNavigationItems()
         setupUI()
         roomListViewModel = RoomListViewModel()
         fillUI()
-        // Do any additional setup after loading the view, typically from a nib.
-        }
+        
+    }
+    
+    // MARK: Binding
     
     func fillUI() {
         
@@ -52,6 +58,8 @@ class RoomListVC: UIViewController {
         
     }
     
+    // MARK: UI Setup methods
+
     func setupUI() {
         tblRooms.delegate = self
         tblRooms.register(UINib(nibName: TCellRoom.nibName, bundle: nil), forCellReuseIdentifier: TCellRoom.nibName)
@@ -59,11 +67,6 @@ class RoomListVC: UIViewController {
         let appearPoint:CGFloat = self.viewTop.frame.origin.y + self.viewTop.frame.size.height
         filterView?.frame = CGRect(x: 0, y: appearPoint, width: self.view.frame.size.width, height: 0)
         filterView?.btnApply.addTarget(self, action: #selector(applyFilters(_:)), for: .touchUpInside)
-    }
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
     func setupNavigationItems() {
@@ -110,6 +113,8 @@ class RoomListVC: UIViewController {
         self.navigationController?.pushViewController(bookRoomVC, animated: true)
     }
     
+    // MARK: Button Actions
+    
     @objc func applyFilters(_ sender:UIButton) {
         guard let filterView = filterView else { return }
         
@@ -118,7 +123,7 @@ class RoomListVC: UIViewController {
         guard let name = filterView.txtRoomName.text else { return }
         guard let size = filterView.txtSize.text else { return }
         guard let capacity = filterView.txtCapacity.text else { return }
-
+        
         filterCount = availableNextHour ? filterCount + 1 : filterCount
         filterCount = name.count > 0 ? filterCount + 1 : filterCount
         filterCount = size.count > 0 ? filterCount + 1 : filterCount
@@ -140,7 +145,7 @@ class RoomListVC: UIViewController {
         guard let previousDay = Calendar.current.date(byAdding: .day, value: -1, to: selectedDate) else { return }
         roomListViewModel?.changeDate(previousDay)
     }
-
+    
     @objc func actNextDay(_ sender : UIButton) {
         guard let selectedDate = roomListViewModel?.selectedDate.value else { return }
         guard let nextDay = Calendar.current.date(byAdding: .day, value: 1, to: selectedDate) else { return }
@@ -149,17 +154,17 @@ class RoomListVC: UIViewController {
     
     @objc func actTitleButton(_ sender: UIButton) {
         // todo
-//        let picker: UIDatePicker = UIDatePicker()
-//        picker.datePickerMode = .date
-//        picker.backgroundColor = UIColor.gray
-//        picker.addTarget(self, action: #selector(dateChanged(_:)), for: .valueChanged)
-//
-//        let appearPoint:CGFloat = self.viewTop.frame.origin.y + self.viewTop.frame.size.height
-//        picker.frame = CGRect(x: 0, y: appearPoint, width: self.view.frame.size.width, height: 0)
-//            self.view.addSubview(picker)
-//        UIView.animate(withDuration: 1) {
-//            picker.frame.size.height = 300
-//        }
+        //        let picker: UIDatePicker = UIDatePicker()
+        //        picker.datePickerMode = .date
+        //        picker.backgroundColor = UIColor.gray
+        //        picker.addTarget(self, action: #selector(dateChanged(_:)), for: .valueChanged)
+        //
+        //        let appearPoint:CGFloat = self.viewTop.frame.origin.y + self.viewTop.frame.size.height
+        //        picker.frame = CGRect(x: 0, y: appearPoint, width: self.view.frame.size.width, height: 0)
+        //            self.view.addSubview(picker)
+        //        UIView.animate(withDuration: 1) {
+        //            picker.frame.size.height = 300
+        //        }
         
         
     }
@@ -167,9 +172,10 @@ class RoomListVC: UIViewController {
         showOrHideFilters()
     }
 }
+// MARK: Delegate methods
 
 extension RoomListVC: UITableViewDelegate, RoomDetailsVCDelegate {
-
+    
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return rowHeight
     }

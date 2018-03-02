@@ -14,8 +14,13 @@ protocol RoomDetailsViewModelProtocol {
 }
 
 class RoomDetailsViewModel: NSObject, RoomDetailsViewModelProtocol {
+    
+    // MARK: Properties
+    
     var room: Dynamic<Room>
-
+    
+    // MARK: Initializer
+    
     init(room:Room) {
         self.room = Dynamic(room)
         super.init()

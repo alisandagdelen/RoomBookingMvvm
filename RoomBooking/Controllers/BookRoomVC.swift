@@ -12,7 +12,8 @@ import SCLAlertView
 
 class BookRoomVC: UIViewController {
     
-    @IBOutlet weak var viewTimeBar: UIView!
+    @IBOutlet weak var lblAvailableHours: UILabel!
+    @IBOutlet weak var btnChooseTime: UIButton!
     @IBOutlet weak var btnBookRoom: UIButton!
     @IBOutlet weak var btnAddAttendee: UIButton!
     @IBOutlet weak var viewTableBorder: UIView!
@@ -39,13 +40,14 @@ class BookRoomVC: UIViewController {
         tblAttendees.register(UINib(nibName: TCellAttendee.nibName, bundle: nil), forCellReuseIdentifier: TCellAttendee.nibName)
         tblAttendees.delegate = self
         self.tblAttendees.dataSource = self
+        addDoneButtonTextfield()
         
+        lblAvailableHours.text = bookRoomViewModel?.availableHours.joined(separator: " | ")
+        
+        lblAvailableHours.textColor = UIColor.oneaDarkGreen
         btnAddAttendee.backgroundColor = UIColor.oneaPurple
         btnBookRoom.backgroundColor = UIColor.oneaDarkGreen
-        viewTableBorder.backgroundColor = UIColor.oneaPink
-        
-        let viewTimeBarGesture = UITapGestureRecognizer(target: self, action:  #selector(self.chooseTime(_:)))
-        viewTimeBar.addGestureRecognizer(viewTimeBarGesture)
+        btnChooseTime.backgroundColor = UIColor.oneaGreen
     }
     
     func fillUI() {
@@ -78,7 +80,7 @@ class BookRoomVC: UIViewController {
         }
     }
     
-    @objc func chooseTime(_ sender : UITapGestureRecognizer) {
+    func showChooseTimePopup() {
         let selectTimeVC = self.storyboard!.instantiateViewController(withIdentifier: String(describing: SelectTimeVC.self)) as! SelectTimeVC
         selectTimeVC.availableHours = bookRoomViewModel?.availableHours
         selectTimeVC.delegate = self
@@ -88,6 +90,28 @@ class BookRoomVC: UIViewController {
         selectTimeVC.didMove(toParentViewController: self)
     }
     
+    func addDoneButtonTextfield() {
+
+        let toolbar:UIToolbar = UIToolbar(frame: CGRect(x: 0, y: 0,  width: self.view.frame.size.width, height: 30))
+        let flexSpace = UIBarButtonItem(barButtonSystemItem:    .flexibleSpace, target: nil, action: nil)
+        let doneBtn: UIBarButtonItem = UIBarButtonItem(title: "Done", style: .done, target: self, action: #selector(self.doneButtonAction))
+        toolbar.setItems([flexSpace, doneBtn], animated: false)
+        toolbar.sizeToFit()
+
+        txtAttendeeName.inputAccessoryView = toolbar
+        txtBookingTitle.inputAccessoryView = toolbar
+        txtAttendeeEmail.inputAccessoryView = toolbar
+        txtAttendeePhone.inputAccessoryView = toolbar
+        txtViewBookingDesc.inputAccessoryView = toolbar
+    }
+    @objc func doneButtonAction() {
+        self.view.endEditing(true)
+    }
+    
+    @IBAction func actBtnChooseTime(_ sender: UIButton) {
+        showChooseTimePopup()
+    }
+    
     @IBAction func actBtnAddAttendee(_ sender: UIButton) {
         guard let name = txtAttendeeName.text, let email = txtAttendeeEmail.text, let phoneNo = txtAttendeePhone.text else { return }
         bookRoomViewModel?.addAttendee(name: name, email: email, phoneNo: phoneNo)
@@ -95,20 +119,16 @@ class BookRoomVC: UIViewController {
     
     @IBAction func actBookRoom(_ sender: UIButton) {
         guard let title = txtBookingTitle.text, let description = txtViewBookingDesc.text else { return }
-        AlertView.show()
         bookRoomViewModel?.bookRoom(title: title, description: description, { [unowned self] (success) in
             if success {
                 self.navigationController?.popViewController(animated: true)
-                AlertView.show(.success, "Booking Complete")
-            } else {
-                AlertView.show(.error, title: "Failed", subTitle: "Booking Failed", showCloseButton: true, duration: 0)
             }
         })
     }
 }
 
 extension BookRoomVC:UITableViewDelegate, UITableViewDataSource, SelectTimeVCDelegate {
- 
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return bookRoomViewModel?.attendees.value.count ?? 0
     }

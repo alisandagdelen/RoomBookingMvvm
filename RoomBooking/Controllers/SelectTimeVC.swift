@@ -159,6 +159,10 @@ class SelectTimeVC: BasePopupVC {
         removeAnimate()
     }
     
+    @IBAction func actBtnClose(_ sender: UIButton) {
+        removeAnimate()
+    }
+    
     @IBAction func hourRangeChanged(_ sender: UISlider) {
         pickerHourRange.value = roundf(pickerHourRange.value)
         

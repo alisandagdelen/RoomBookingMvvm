@@ -105,24 +105,13 @@ class AlertView {
                 
             case .error:
                 alertView.showError(alertTitle, subTitle:alertSubTitle, closeButtonTitle:closeButtonTitle, colorStyle: UIColor.oneaRedHex, animationStyle:animationStyle)
-//            case .notice:
-//                alertView.showNotice(alertTitle, subTitle:alertSubTitle, closeButtonTitle:closeButtonTitle, duration:duration, animationStyle:animationStyle)
+            
             case .warning:
                   alertView.showWarning(alertTitle, subTitle:alertSubTitle, closeButtonTitle:closeButtonTitle, colorStyle: UIColor.oneaYellowHex, animationStyle:animationStyle)
-                // todo
-//            case .info:
-//                alertView.showInfo(alertTitle, subTitle:alertSubTitle, closeButtonTitle:closeButtonTitle, duration:duration, animationStyle:animationStyle)
-//            case .edit(let text):
-//                currentTextfield = alertView.addTextField("")
-//                currentTextfield?.text = text
-//                if let _ = currentSubmitButton {
-//                    currentTextfield?.addTarget(currentAlertView, action: #selector(SCLAlertView.textFieldDidChange(_:)), for:.editingChanged)
-//                }
-//                alertView.showEdit(alertTitle, subTitle:alertSubTitle, closeButtonTitle:closeButtonTitle, duration:0, animationStyle:animationStyle)
+            
             case .wait:
                 alertView.showWait(alertTitle, subTitle:alertSubTitle, closeButtonTitle:closeButtonTitle,colorStyle: UIColor.oneaPinkHex, animationStyle:animationStyle)
-//            case .dialog:
-//                alertView.showInfo(alertTitle, subTitle:alertSubTitle, closeButtonTitle:closeButtonTitle, duration:0, circleIconImage : nil, animationStyle:animationStyle)
+           
             default:
               break
             }

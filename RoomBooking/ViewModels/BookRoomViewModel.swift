@@ -90,13 +90,16 @@ class BookRoomViewModel: NSObject, BookRoomViewModelProtocol {
     
     func bookRoom(title: String, description: String, _ completion: @escaping SuccessBlock) {
         if validateBookingFields(title: title, description: description) {
+            AlertView.show()
             let booking = Booking(date: date.unixDate, timeStart: beginTime, timeEnd: endTime, title: title, description: description, roomName: room.name)
             let request = BookRoomRequest(booking: booking, attendees: attendees.value)
             dataService.postBooking(request, { (response, error) in
                 if let response = response {
                     completion(response.success)
+                    AlertView.show(.success, "Booking Complete")
                 } else {
                     completion(false)
+                    AlertView.show(.error, title: "Failed", subTitle: "Booking Failed", showCloseButton: true, duration: 0)
                 }
             })
         }

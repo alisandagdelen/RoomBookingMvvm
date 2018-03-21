@@ -52,9 +52,6 @@ Different methods used for UI, like storyboard ,xib files and programmatic ui. I
     pod 'SCLAlertView', :git => 'https://github.com/vikmeup/SCLAlertView-Swift', :branch => 'master'
  ```
 
-## Fails
-I thought using sliders to choose booking time is good idea but then i saw it cause spaghetti code and when there is many time options, its being useless.
-
 ### Author
 Alisan Dagdelen
 alisandagdelen@gmail.com
